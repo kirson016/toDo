@@ -17,4 +17,10 @@ margin: -150px 0 0 -300px;
   background-color: black;
   width: 600px;
   height: 40px;
+  color:white;
+}
+
+#glyphonicTopMenu {
+margin: 10px 0 0 20px;
+  font-size: 20px;
 }
