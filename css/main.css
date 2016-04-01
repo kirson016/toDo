@@ -78,8 +78,8 @@
   height: 40px;
   color: white;
 }
-#addTaskRecentTask {
-  margin: -26px 0 0 47px;
+#addTaskGlpyhonicText {
+  margin: -24px 0 0 47px;
   font-size: 20px;
 }
 .buttonStyle {
@@ -115,6 +115,12 @@
   width: 175px;
 }
 #addTaskglyphonicTopMenu {
-  margin: 8px 0 0 20px;
-  font-size: 20px;
+  margin: 11px 0 0 20px;
+  font-size: 16px;
+}
+.TaskPriority {
+  width: 175px;
+}
+.TaskPriorityPosition {
+  margin: -27px 0 0 174px;
 }
