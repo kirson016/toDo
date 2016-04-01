@@ -1,7 +1,6 @@
 .bodyBackground {
   background-color: #9ABCBC;
 }
-
 .WindowBackground {
   background-color: #F5F5DC;
   float: left;
@@ -27,6 +26,7 @@
   font-size: 20px;
 }
 #RecentTask {
+  word-spacing: -15px;
   margin: -24px 0 0 30px;
   font-size: 20px;
 }
@@ -56,47 +56,65 @@
   color: white;
 }
 
- /* addTask CSS */
+/* addTask CSS */
 
- .addTaskWindowBackground {
-   background-color: #F5F5DC;
-   float: left;
-   position: absolute;
-   width: 600px;
-   height: 300px;
-   z-index: 15;
-   top: 50%;
-   left: 50%;
-   margin: -150px 0 0 -300px;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 12px;
-   line-height: 23px;
- }
- .addTasktopMenu {
-   background-color: #DC143C;
-   width: 600px;
-   height: 40px;
-   color: white;
- }
- #RecentTask {
-   margin: -24px 0 0 30px;
-   font-size: 20px;
- }
- .buttonStyle {
-   margin: -25px 0 0 355px;
-   font-size: 10px;
- }
- #btnShowAllTasks{
-   margin: 0 0 0 135px;
-   font-size: 10px;
-   width: 100px;
-   height: 20px;
-   background-color: #F3818D;
-   border-color: #F3818D;
- }
- .btnText {
-   font-size: 10px;
-   margin: -4px 0 0 0px;
-   font-weight: bold;
-   color: white;
- }
+.addTaskWindowBackground {
+  background-color: #F5F5DC;
+  float: left;
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 23px;
+}
+.addTasktopMenu {
+  background-color: #DC143C;
+  width: 600px;
+  height: 40px;
+  color: white;
+}
+#addTaskRecentTask {
+  margin: -26px 0 0 47px;
+  font-size: 20px;
+}
+.buttonStyle {
+  margin: -25px 0 0 355px;
+  font-size: 10px;
+}
+#btnShowAllTasks {
+  margin: 0 0 0 135px;
+  font-size: 10px;
+  width: 100px;
+  height: 20px;
+  background-color: #F3818D;
+  border-color: #F3818D;
+}
+.taskInformationBody {
+  font-weight: bold;
+  float: left;
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -75px 0 0 -200px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 15px;
+}
+.textInput {
+  margin: 0 0 0 80px;
+  width: 175px;
+}
+.descriptionInput {
+  margin: 0 0 0 36px;
+  width: 175px;
+}
+#addTaskglyphonicTopMenu {
+  margin: 8px 0 0 20px;
+  font-size: 20px;
+}

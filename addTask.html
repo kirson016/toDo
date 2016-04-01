@@ -10,10 +10,20 @@
 <body class="bodyBackground">
   <div class="addTaskWindowBackground">
     <div class="addTasktopMenu">
-      <span class="glyphicon glyphicon-plus" id="glyphonicTopMenu" aria-hidden="true"> <p id="RecentTask">Add Task</p> </span>
+      <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span><p id="addTaskRecentTask">Add Task</p> 
       <div class="buttonStyle">
-        <button type="button" class="btn btn-default " id="btnShowAllTasks"><p class="btnText">Show All Tasks</p></button>
+        <button type="button" class="btn btn-default " id="btnShowAllTasks">
+          <p class="btnText">Show All Tasks</p>
+        </button>
       </div>
+    </div>
+    <div class="taskInformationBody">
+      <p>Task Name:
+        <input type="text" class="textInput" />
+      </p>
+      <p>Task Description:
+        <input type="text" class="descriptionInput" />
+      </p>
     </div>
   </div>
   <script src="JS\javaScript.js"></script>
