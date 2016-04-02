@@ -107,18 +107,31 @@
   line-height: 15px;
 }
 .textInput {
+  border-width: 2px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
   margin: 0 0 0 80px;
   width: 230px;
 }
 .descriptionInput {
+  border-width: 2px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
   margin: 0 0 0 36px;
   width: 230px;
 }
 #addTaskglyphonicTopMenu {
+;
   margin: 11px 0 0 20px;
   font-size: 16px;
 }
 #TaskPriority {
+  border-width: 2px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 5px;
   width: 230px;
 }
 .TaskPriorityPosition {
