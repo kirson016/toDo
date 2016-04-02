@@ -10,7 +10,8 @@
 <body class="bodyBackground">
   <div class="addTaskWindowBackground">
     <div class="addTasktopMenu">
-      <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span><p id="addTaskRecentTask">Add Task</p> 
+      <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span>
+      <p id="addTaskGlpyhonicText">Add Task</p>
       <div class="buttonStyle">
         <button type="button" class="btn btn-default " id="btnShowAllTasks">
           <p class="btnText">Show All Tasks</p>
@@ -19,10 +20,25 @@
     </div>
     <div class="taskInformationBody">
       <p>Task Name:
-        <input type="text" class="textInput" />
+        <input type="text" class="textInput" required/>
       </p>
       <p>Task Description:
-        <input type="text" class="descriptionInput" />
+        <input type="text" class="descriptionInput" required/>
+      </p>
+      <p>Task Priority:
+        <style>
+          select:invalid {
+            color: gray;
+          }
+        </style>
+        <form class="TaskPriorityPosition">
+          <select id="TaskPriority" required>
+            <option value="" disabled selected hidden>--Select--</option>
+            <option value="0">High</option>
+            <option value="1">Medium</option>
+            <option value="3">Low</option>
+          </select>
+        </form>
       </p>
     </div>
   </div>

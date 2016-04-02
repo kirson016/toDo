@@ -118,7 +118,7 @@
   margin: 11px 0 0 20px;
   font-size: 16px;
 }
-.TaskPriority {
+#TaskPriority {
   width: 175px;
 }
 .TaskPriorityPosition {
