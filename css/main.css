@@ -137,3 +137,11 @@
 .TaskPriorityPosition {
   margin: -27px 0 0 174px;
 }
+#btn-AddNewTask{
+    border-color: #4C4C4D;
+    background-color: #4C4C4D;
+    width: 150px;
+    height: 34px;
+    font-size: 16px;
+    margin: 35px 0 0 0;
+}
