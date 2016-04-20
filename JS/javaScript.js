@@ -21,7 +21,7 @@
             if (text.length < 3 || TaskPriority == "none") {
                 alert("Task name is to short! or didn't set Task Priority");
             } else {
-                Tasks.elResponceSpan.innerHTML += '<input type="checkbox" aria-label="...">     ' + text + '      ';
+                Tasks.elResponceSpan.innerHTML += '  <div class="input-group"><span class="input-group-addon userInput"><p class="userTaskText"> '+text+ '</p><input type="checkbox" id="checkBox" aria-label="..."></span><input type="text" class="form-control userInput" aria-label="..."> ';
                 countBox += 1;
                 number += 1;
                 alert(TaskPriority);

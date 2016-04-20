@@ -59,6 +59,13 @@
     background-color: #F5F5DC;
     border-color: #F5F5DC;
 }
+.userTaskText {
+    margin: 1px 0 0 40px;
+}
+#checkBox {
+    position: absolute;
+    margin: -16px 0 0 10px
+}
 
 /* addTask CSS */
 
