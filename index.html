@@ -22,8 +22,52 @@
         </button>
       </div>
     </div>
+    <span id="responce"></span>
+
+    <!--Second Window in index.html -->
+
+    <div class="spaceBetwenWindows">
+      <div class="addTaskWindowBackground">
+        <div class="addTasktopMenu">
+          <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span>
+          <p id="addTaskGlpyhonicText">Add Task</p>
+          <div class="buttonStyle">
+            <a href="index.html">
+              <button type="button" class="btn btn-default " id="btnShowAllTasks">
+                <p class="btnText">Show All Tasks</p>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="taskInformationBody">
+          <p>Task Name:
+            <input type="text" class="textInput" id="taskName" required/>
+          </p>
+          <p>Task Description:
+            <input type="text" class="descriptionInput" required/>
+          </p>
+          <p>Task Priority:
+            <style>
+              select:invalid {
+                color: gray;
+              }
+            </style>
+            <form class="TaskPriorityPosition">
+              <select id="TaskPriority" required>
+                <option value="" disabled selected hidden>--Select--</option>
+                <option value="0" id="value0">High</option>
+                <option value="1" id="value1">Medium</option>
+                <option value="3" id="value3">Low</option>
+              </select>
+            </form>
+          </p>
+              <button type="button" class="btn btn-primary btn-md" id="btn-AddNewTask">Add New Task</button>
+        </div>
+      </div>
+
+    <p class="btnText">Clear complated task</p>
+    </div>
   </div>
   <script src="JS\javaScript.js"></script>
 </body>
-
 </html>

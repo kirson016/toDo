@@ -65,9 +65,9 @@
   width: 600px;
   height: 300px;
   z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -300px;
+/*  top: 50%;
+left: 50%;
+  margin: -150px 0 0 -300px; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 23px;
@@ -145,3 +145,22 @@
     font-size: 16px;
     margin: 35px 0 0 0;
 }
+.spaceBetwenWindows {
+    margin: 300px 0 0 0;
+}
+ #task1 {
+   color:green;
+   font-size: 16px;
+ }
+ #task2 {
+   color:yellow;
+   font-size: 16px;
+ }
+ #task {
+   color:red;
+   font-size: 16px;
+ }
+ #task 1 {
+   color:red;
+   font-size: 16px;
+ }
