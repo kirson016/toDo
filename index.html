@@ -2,75 +2,82 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
-  <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
 </head>
 
 <body class="bodyBackground">
-  <div class="WindowBackground">
-    <div class="topMenu">
-      <span class="glyphicon glyphicon-tasks" id="glyphonicTopMenu" aria-hidden="true"> <p id="RecentTask">Recent Task</p> </span>
-      <div class="buttonStyle">
-        <a href="addTask.html">
-          <button type="button" class="btn btn-default " id="btnAddNewTaskSize">
-            <p class="btnText">Add New Task</p>
-          </button>
-        </a>
-        <button type="button" class="btn btn-default " id="btnClearTaskSize">
-          <p class="btnText">Clear complated task</p>
-        </button>
-      </div>
+    <div class="WindowBackground">
+        <div class="topMenu">
+            <span class="glyphicon glyphicon-tasks" id="glyphonicTopMenu" aria-hidden="true"> <p id="RecentTask">Recent Task</p> </span>
+            <div class="buttonStyle">
+                <a href="addTask.html">
+                    <button type="button" class="btn btn-default " id="btnAddNewTaskSize">
+                        <p class="btnText">Add New Task</p>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-default " id="btnClearTaskSize">
+                    <p class="btnText">Clear complated task</p>
+                </button>
+            </div>
+        </div>
+        <span id="responce">
+          <div class="input-group">
+            <span class="input-group-addon userInput">
+              <input type="checkbox" aria-label="..." >
+            </span>
+        <input type="text" class="form-control userInput" aria-label="...">
     </div>
-    <span id="responce">
-<input type="checkbox" aria-label="...">
-
+    <!-- /input-group -->
     </span>
+
 
     <!--Second Window in index.html -->
 
     <div class="spaceBetwenWindows">
-      <div class="addTaskWindowBackground">
-        <div class="addTasktopMenu">
-          <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span>
-          <p id="addTaskGlpyhonicText">Add Task</p>
-          <div class="buttonStyle">
-            <a href="index.html">
-              <button type="button" class="btn btn-default " id="btnShowAllTasks">
-                <p class="btnText">Show All Tasks</p>
-              </button>
-            </a>
-          </div>
+        <div class="addTaskWindowBackground">
+            <div class="addTasktopMenu">
+                <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"> </span>
+                <p id="addTaskGlpyhonicText">Add Task</p>
+                <div class="buttonStyle">
+                    <a href="index.html">
+                        <button type="button" class="btn btn-default " id="btnShowAllTasks">
+                            <p class="btnText">Show All Tasks</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="taskInformationBody">
+                <p>Task Name:
+                    <input type="text" class="textInput" id="taskName" required/>
+                </p>
+                <p>Task Description:
+                    <input type="text" class="descriptionInput" required/>
+                </p>
+                <p>Task Priority:
+                    <style>
+                        select:invalid {
+                            color: gray;
+                        }
+                    </style>
+                    <form class="TaskPriorityPosition">
+                        <select id="TaskPriority" required>
+                            <option value="none" disabled selected hidden>--Select--</option>
+                            <option value="0" id="value0">High</option>
+                            <option value="1" id="value1">Medium</option>
+                            <option value="3" id="value3">Low</option>
+                        </select>
+                    </form>
+                </p>
+                <button type="button" class="btn btn-primary btn-md" id="btn-AddNewTask">Add New Task</button>
+            </div>
         </div>
-        <div class="taskInformationBody">
-          <p>Task Name:
-            <input type="text" class="textInput" id="taskName" required/>
-          </p>
-          <p>Task Description:
-            <input type="text" class="descriptionInput" required/>
-          </p>
-          <p>Task Priority:
-            <style>
-              select:invalid {
-                color: gray;
-              }
-            </style>
-            <form class="TaskPriorityPosition">
-              <select id="TaskPriority" required>
-                <option value="none" disabled selected hidden>--Select--</option>
-                <option value="0" id="value0">High</option>
-                <option value="1" id="value1">Medium</option>
-                <option value="3" id="value3">Low</option>
-              </select>
-            </form>
-          </p>
-              <button type="button" class="btn btn-primary btn-md" id="btn-AddNewTask">Add New Task</button>
-        </div>
-      </div>
 
-    <p class="btnText">Clear complated task</p>
+        <p class="btnText">Clear complated task</p>
     </div>
-  </div>
-  <script src="JS\javaScript.js"></script>
+    </div>
+    <script src="JS\javaScript.js"></script>
 </body>
+
 </html>

@@ -18,16 +18,14 @@
             var z = boxName[number];
             var text = Tasks.elTextInput.value;
             var TaskPriority = Tasks.elTaskPriority.value;
-            if (text.length<3 || TaskPriority == "none")
-            {
-              alert("Task name is to short! or didn't set Priority");
-            }
-            else{
-            Tasks.elResponceSpan.innerHTML += '<input type="checkbox" aria-label="...">     ' + text + '      '  ;
-            countBox += 1;
-            number += 1;
-            alert(TaskPriority);
-          };
+            if (text.length < 3 || TaskPriority == "none") {
+                alert("Task name is to short! or didn't set Task Priority");
+            } else {
+                Tasks.elResponceSpan.innerHTML += '<input type="checkbox" aria-label="...">     ' + text + '      ';
+                countBox += 1;
+                number += 1;
+                alert(TaskPriority);
+            };
         },
     };
     Tasks.elAddButton.onclick = Tasks.resetInput;
