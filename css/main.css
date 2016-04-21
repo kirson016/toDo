@@ -1,3 +1,6 @@
+a {
+    color: black;
+}
 .bodyBackground {
     background-color: #9ABCBC;
     overflow: hidden;
@@ -52,6 +55,9 @@
     background-color: #F3818D;
     border-color: #F3818D;
 }
+#hide {
+    color: #9ABCBC;
+}
 .btnText {
     font-size: 10px;
     margin: -4px 0 0 0px;
@@ -73,10 +79,10 @@
     position: absolute;
     margin: -22px 0 0 500px
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
+
 /* addTask CSS */
 
 .addTaskWindowBackground {
