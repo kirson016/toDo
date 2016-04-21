@@ -60,11 +60,15 @@
     border-color: #F5F5DC;
 }
 .userTaskText {
-    margin: 1px 0 0 40px;
+    margin: 10px 0 0 40px;
 }
 #checkBox {
     position: absolute;
-    margin: -16px 0 0 10px
+    margin: -17px 0 0 10px
+}
+#priorityButtons {
+  position: absolute;
+  margin: -22px 0 0 500px
 }
 
 /* addTask CSS */
