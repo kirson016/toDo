@@ -10,7 +10,7 @@
     z-index: 15;
     top: 50%;
     left: 50%;
-    margin: -150px 0 0 -300px;
+    margin: 50px 0 0 -300px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
@@ -67,8 +67,11 @@
     margin: -17px 0 0 10px
 }
 #priorityButtons {
-  position: absolute;
-  margin: -22px 0 0 500px
+    position: absolute;
+    margin: -22px 0 0 500px
+}
+#responce {
+    overflow: auto;
 }
 
 /* addTask CSS */
@@ -80,9 +83,8 @@
     width: 600px;
     height: 300px;
     z-index: 15;
-    /*  top: 50%;
-left: 50%;
-  margin: -150px 0 0 -300px; */
+    left: 50%;
+    margin: 150px 0 0 -300px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
