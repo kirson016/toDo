@@ -1,7 +1,10 @@
 .bodyBackground {
     background-color: #9ABCBC;
+    overflow: hidden;
 }
 .WindowBackground {
+    position: fixed;
+    overflow-x: hidden;
     background-color: #F5F5DC;
     float: left;
     position: absolute;
@@ -70,10 +73,10 @@
     position: absolute;
     margin: -22px 0 0 500px
 }
-#responce {
-    overflow: auto;
-}
 
+::-webkit-scrollbar {
+    display: none;
+}
 /* addTask CSS */
 
 .addTaskWindowBackground {
