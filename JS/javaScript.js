@@ -25,6 +25,8 @@
 
             if (text.length < 3 || TaskPriority == "none") {
                 alert("Task name is to short! or didn't set Task Priority");
+            } else if (text.length > 64 || taskDescription.length > 70) {
+                alert("Task name or description is to long!");
             } else {
                 //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
                 Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText">' + '<a href=" " title="' + taskDescription + '">' + text + '</a> </p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
