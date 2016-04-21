@@ -18,14 +18,26 @@
             var z = boxName[number];
             var text = Tasks.elTextInput.value;
             var TaskPriority = Tasks.elTaskPriority.value;
+
+            if (TaskPriority == 3)
+            {
+              priority= '<button type="button" class="btn btn-success">LOW</button>';
+            }
+            else if (TaskPriority == 1) {
+                priority= '<button type="button" class="btn btn-warning">MEDIUM</button>';
+            }
+            else {
+              priority= '<button type="button" class="btn btn-danger">HIGH</button>';
+            }
+
             if (text.length < 3 || TaskPriority == "none") {
                 alert("Task name is to short! or didn't set Task Priority");
             } else {
-                Tasks.elResponceSpan.innerHTML += '  <div class="input-group"><span class="input-group-addon userInput"><p class="userTaskText"> '+text+ '</p><input type="checkbox" id="checkBox" aria-label="..."></span><input type="text" class="form-control userInput" aria-label="..."> ';
+                Tasks.elResponceSpan.innerHTML += '<p class="userTaskText"> '+text+ '</p><input type="checkbox" id="checkBox" aria-label="..."> '+priority ;
                 countBox += 1;
                 number += 1;
-                alert(TaskPriority);
-            };
+                //alert(priority);
+            }
         },
     };
     Tasks.elAddButton.onclick = Tasks.resetInput;
