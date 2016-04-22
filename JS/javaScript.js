@@ -16,11 +16,11 @@
             var taskDescription = Tasks.eltaskDesciptionInput.value;
 
             if (TaskPriority == 3) {
-                priority = '<button type="button" class="btn-group-sm btn-success " id="priorityButtons">LOW</button>';
+                priority = '<button type="button" class="btn-group-sm btn-success priorityButtons ">LOW</button>';
             } else if (TaskPriority == 1) {
-                priority = '<button type="button" class="btn-group-sm btn-warning " id="priorityButtons">MEDIUM</button>';
+                priority = '<button type="button" class="btn-group-sm btn-warning priorityButtons " >MEDIUM</button>';
             } else {
-                priority = '<button type="button" class="btn-group-sm btn-danger " id="priorityButtons">HIGH</button>';
+                priority = '<button type="button" class="btn-group-sm btn-danger  priorityButtons" >HIGH</button>';
             }
 
             if (text.length < 3 || TaskPriority == "none") {
@@ -29,13 +29,13 @@
                 alert("Task name or description is to long!");
             } else {
                 //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-                Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText">' + '<a href=" " title="' + taskDescription + '">' + text + '</a> </p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-                alert(TaskDescription);
+                Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText">' + '<a href=" " title="' + taskDescription + '">' + text + '</a> </p><span class="checkBOX"><input type="checkbox" class="checked" aria-label="..."></span> ' + priority;
+              //  alert(TaskDescription);
             }
         },
-        deleteCheckBox: function() {
+        deleteSelectedCheckBox: function() {
             var boxes = document.getElementsByClassName('checked');
-            var texts = document.getElementsByClassName('checkboxid');
+            var texts = document.getElementsByClassName('checkBoxSelector');
             for (var i = 0; i < boxes.length; i++) {
                 box = boxes[i];
                 txt = texts[i];
@@ -48,4 +48,4 @@
     };
 
     Tasks.elAddButton.onclick = Tasks.resetInput;
-    Tasks.elDeleteTask.onclick = Tasks.deleteCheckBox;
+    Tasks.elDeleteTask.onclick = Tasks.deleteSelectedCheckBox;
