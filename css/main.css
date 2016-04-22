@@ -14,19 +14,19 @@ input[type=checkbox] {
     background-color: #F5F5DC;
     float: left;
     position: absolute;
-    width: 600px;
+    width: 1280px;
     height: 300px;
     z-index: 15;
     top: 50%;
     left: 50%;
-    margin: 50px 0 0 -300px;
+    margin: 50px 0 0 -640px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
 }
 .topMenu {
     background-color: #39393D;
-    width: 600px;
+    width: 1280px;
     height: 40px;
     color: white;
 }
@@ -73,7 +73,7 @@ input[type=checkbox] {
 }
 .userTaskText {
     margin: 10px 0 0 40px;
-    color:black;
+    color: black;
 }
 .checkBOX {
     position: absolute;
@@ -93,18 +93,18 @@ input[type=checkbox] {
     background-color: #F5F5DC;
     float: left;
     position: absolute;
-    width: 600px;
+    width: 1280px;
     height: 300px;
     z-index: 15;
     left: 50%;
-    margin: 150px 0 0 -300px;
+    margin: 150px 0 0 -640px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
 }
 .addTasktopMenu {
     background-color: #DC143C;
-    width: 600px;
+    width: 1280px;
     height: 40px;
     color: white;
 }
@@ -113,7 +113,7 @@ input[type=checkbox] {
     font-size: 20px;
 }
 .buttonStyle {
-    margin: -25px 0 0 355px;
+    margin: -25px 0 0 1030px;
     font-size: 10px;
 }
 #btnShowAllTasks {

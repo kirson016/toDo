@@ -69,5 +69,36 @@ var Tasks = {
     },
 };
 
+
+var hideWindows = {
+    elShowAllTaskButton: document.getElementById("showAllTasks"),
+    elAddNewTaskButton: document.getElementById("addNewTask"),
+
+    hideAddTaskWindow: function() {
+        var addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
+        var taskWindow = document.getElementsByClassName('WindowBackground');
+        var hidden = 'hidden';
+        var visible = 'visible';
+        for (var i = 0; i < addTaskCss.length; i++) {
+            addTaskCss[i].style["visibility"] = hidden;
+            taskWindow[i].style["visibility"] = visible;
+        }
+    },
+    hideTaskWindow: function() {
+        var addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
+        var taskWindow = document.getElementsByClassName('WindowBackground');
+        var hidden = 'hidden';
+        var visible = 'visible';
+        for (var i = 0; i < addTaskCss.length; i++) {
+            taskWindow[i].style["visibility"] = hidden;
+            addTaskCss[i].style["visibility"] = visible;
+        }
+    },
+}
+
+
 Tasks.elAddButton.onclick = Tasks.resetInput;
 Tasks.elDeleteTask.onclick = Tasks.deleteSelectedCheckBox;
+
+hideWindows.elShowAllTaskButton.onclick = hideWindows.hideAddTaskWindow;
+hideWindows.elAddNewTaskButton.onclick = hideWindows.hideTaskWindow;
