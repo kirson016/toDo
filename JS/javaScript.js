@@ -31,12 +31,16 @@ var Tasks = {
             alert("Task name or description is to long!");
         } else {
             //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText">' + text + ' </p><span class="checkBOX"><label><input type="checkbox" id="x" class="checked"  onclick=handleClick(this) aria-label="..."></label></span> ' + priority + '</div>';
-            //  alert(TaskDescription);
+            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText">' + text + ' </p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
+            Tasks.elTextInput.value = "";
+            Tasks.elTaskPriority.value = "none";
+            Tasks.eltaskDesciptionInput.value = "";
         }
     },
+
     deleteSelectedCheckBox: function() {
         var texts = document.getElementsByClassName('checkBoxSelector');
+
         for (var i = 0; i < Tasks.elboxes.length; i++) {
             box = Tasks.elboxes[i];
             txt = texts[i];
@@ -46,24 +50,24 @@ var Tasks = {
             }
         }
     },
+
+    handleClick: function() {
+        var aColl = document.getElementsByClassName('userTaskText');
+        var lineThrough = 'line-through';
+        var noLine = 'none';
+        var texts = document.getElementsByClassName('checkBoxSelector');
+
+        for (var i = 0; i < Tasks.elboxes.length; i++) {
+            box = Tasks.elboxes[i];
+            txt = texts[i];
+            if (box.checked) {
+                aColl[i].parentNode.style["text-decoration"] = lineThrough;
+            } else {
+                aColl[i].parentNode.style["text-decoration"] = noLine;
+            }
+        }
+    },
 };
 
 Tasks.elAddButton.onclick = Tasks.resetInput;
 Tasks.elDeleteTask.onclick = Tasks.deleteSelectedCheckBox;
-//Tasks.elCheckBox.onclick = Tasks.checkIfBoxIsChecked;
-
-function handleClick(cb) {
-    var aColl = document.getElementsByClassName('userTaskText'); //Cache the collection here, so that even a new element added with the same class later we can avoid qurying this again by using the cached collection.
-    var color = 'line-through';
-    var colorr = 'black';
-    var texts = document.getElementsByClassName('checkBoxSelector');
-    for (var i = 0; i < Tasks.elboxes.length; i++) {
-        box = Tasks.elboxes[i];
-        txt = texts[i];
-        if (box.checked) {
-          // for (var j = 0, len = aColl.length; j < len; j++) {
-              aColl[i].parentNode.style["text-decoration"] = color;
-      //     }
-        }
-}
-}
