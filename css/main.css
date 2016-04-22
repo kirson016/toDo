@@ -73,6 +73,7 @@ input[type=checkbox] {
 }
 .userTaskText {
     margin: 10px 0 0 40px;
+    color:black;
 }
 .checkBOX {
     position: absolute;
