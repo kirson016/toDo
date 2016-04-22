@@ -14,19 +14,19 @@ input[type=checkbox] {
     background-color: #F5F5DC;
     float: left;
     position: absolute;
-    width: 1280px;
+    width: 600px;
     height: 300px;
     z-index: 15;
     top: 50%;
     left: 50%;
-    margin: 50px 0 0 -640px;
+    margin: -300px 0 0 -300px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
 }
 .topMenu {
     background-color: #39393D;
-    width: 1280px;
+    width: 600px;
     height: 40px;
     color: white;
 }
@@ -90,31 +90,29 @@ input[type=checkbox] {
 /* addTask CSS */
 
 .addTaskWindowBackground {
+    visibility: hidden;
     background-color: #F5F5DC;
     float: left;
     position: absolute;
-    width: 1280px;
+    width: 600px;
     height: 300px;
     z-index: 15;
     left: 50%;
-    margin: 150px 0 0 -640px;
+    top: 50%;
+    margin: -300px 0 0 -300px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 23px;
 }
 .addTasktopMenu {
     background-color: #DC143C;
-    width: 1280px;
+    width: 600px;
     height: 40px;
     color: white;
 }
 #addTaskGlpyhonicText {
     margin: -24px 0 0 47px;
     font-size: 20px;
-}
-.buttonStyle {
-    margin: -25px 0 0 1030px;
-    font-size: 10px;
 }
 #btnShowAllTasks {
     margin: 0 0 0 135px;
@@ -174,9 +172,6 @@ input[type=checkbox] {
     height: 34px;
     font-size: 16px;
     margin: 35px 0 0 0;
-}
-.spaceBetwenWindows {
-    margin: 300px 0 0 0;
 }
 #task1 {
     color: green;

@@ -8,47 +8,46 @@
     </head>
 
     <body class="bodyBackground">
-        <div class="addTaskWindowBackground">
-            <div class="addTasktopMenu">
-                <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"></span>
-                <p id="addTaskGlpyhonicText">Add Task</p>
-                <div class="buttonStyle">
-                    <button type="button" class="btn btn-default " id="btnShowAllTasks">
-                        <p class="btnText" id="showAllTasks">Show All Tasks</p>
-                    </button>
+        <div>
+            <div class="addTaskWindowBackground">
+                <div class="addTasktopMenu">
+                    <span class="glyphicon glyphicon-plus" id="addTaskglyphonicTopMenu" aria-hidden="true"></span>
+                    <p id="addTaskGlpyhonicText">Add Task</p>
+                    <div class="buttonStyle">
+                        <button type="button" class="btn btn-default " id="btnShowAllTasks">
+                            <p class="btnText" id="showAllTask">Show All Tasks</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="taskInformationBody">
+                    <p>Task Name:
+                        <input type="text" class="textInput" id="taskName" required/>
+                    </p>
+                    <p>Task Description:
+                        <input type="text" class="descriptionInput" id="taskDesciptionInput" required/>
+                    </p>
+                    <p>Task Priority:
+                        <style>
+                            select:invalid {
+                                color: gray;
+                            }
+
+                        </style>
+                        <form class="TaskPriorityPosition">
+                            <select id="TaskPriority" required>
+                                <option value="none" disabled selected hidden>--Select--</option>
+                                <option value="0" id="value0">High</option>
+                                <option value="1" id="value1">Medium</option>
+                                <option value="3" id="value3">Low</option>
+                            </select>
+                        </form>
+                    </p>
+                    <button type="button" class="btn btn-primary btn-md" id="btn-AddNewTask">Add New Task</button>
                 </div>
             </div>
-            <div class="taskInformationBody">
-                <p>Task Name:
-                    <input type="text" class="textInput" id="taskName" required/>
-                </p>
-                <p>Task Description:
-                    <input type="text" class="descriptionInput" id="taskDesciptionInput" required/>
-                </p>
-                <p>Task Priority:
-                    <style>
-                        select:invalid {
-                            color: gray;
-                        }
 
-                    </style>
-                    <form class="TaskPriorityPosition">
-                        <select id="TaskPriority" required>
-                            <option value="none" disabled selected hidden>--Select--</option>
-                            <option value="0" id="value0">High</option>
-                            <option value="1" id="value1">Medium</option>
-                            <option value="3" id="value3">Low</option>
-                        </select>
-                    </form>
-                </p>
-                <button type="button" class="btn btn-primary btn-md" id="btn-AddNewTask">Add New Task</button>
-            </div>
-        </div>
-        <p class=" btnText " id="hide">.</p>
+            <!--Second Window in index.html -->
 
-        <!--Second Window in index.html -->
-
-        <div class="spaceBetwenWindows ">
             <div class="WindowBackground ">
                 <div class="topMenu">
                     <span class="glyphicon glyphicon-tasks" id="glyphonicTopMenu" aria-hidden="true">
@@ -59,7 +58,7 @@
                             <p class="btnText" id="addNewTask">Add New Task</p>
                         </button>
                         <button type="button" class="btn btn-default " id="btnClearTaskSize">
-                            <p class="btnText" >Clear complated task</p>
+                            <p class="btnText">Clear complated task</p>
                         </button>
                     </div>
                 </div>
