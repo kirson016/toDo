@@ -34,7 +34,7 @@ var Tasks = {
             alert("Task name or description is to long!");
         } else {
             //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><span><p class="userTaskText">' + text + '<span class="statusColor">' + active + ' </span>' + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
+            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText"><span class="lineThrough">' + text + '</span><span class="statusColor">' + active + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
             Tasks.elTextInput.value = "";
             Tasks.elTaskPriority.value = "none";
             Tasks.eltaskDesciptionInput.value = "";
@@ -72,7 +72,7 @@ var Tasks = {
     },
 
     handleClick: function() {
-        let aColl = document.getElementsByClassName('userTaskText');
+        let aColl = document.getElementsByClassName('lineThrough');
         let lineThrough = 'line-through';
         let noLine = 'none';
         let texts = document.getElementsByClassName('checkBoxSelector');
@@ -85,11 +85,11 @@ var Tasks = {
             if (box.checked) {
                 hideActive[i].style["visibility"] = 'hidden';
                 hideCopleted[i].style["visibility"] = 'visible';
-                aColl[i].parentNode.style["text-decoration"] = lineThrough;
+                aColl[i].style["text-decoration"] = lineThrough;
             } else {
                 hideActive[i].style["visibility"] = 'visible';
                 hideCopleted[i].style["visibility"] = 'hidden';
-                aColl[i].parentNode.style["text-decoration"] = noLine;
+                aColl[i].style["text-decoration"] = noLine;
             }
         }
     },
