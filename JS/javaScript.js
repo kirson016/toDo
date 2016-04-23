@@ -1,5 +1,6 @@
 var Tasks = {
     elAddButton: document.getElementById('btn-AddNewTask'),
+    elsSaveTask: document.getElementById('btn-saveTask'),
     elDeleteTask: document.getElementById('btnClearTaskSize'),
     elResponceSpan: document.getElementById('responce'),
     elTextInput: document.getElementById("taskName"),
@@ -11,7 +12,7 @@ var Tasks = {
     elboxes: document.getElementsByClassName('checked'),
     elCheckBox: document.getElementsByClassName('userTaskText'),
 
-    resetInput: function() {
+    addMoreTask: function() {
         let priority;
         let text = Tasks.elTextInput.value;
         let TaskPriority = Tasks.elTaskPriority.value;
@@ -39,6 +40,23 @@ var Tasks = {
             Tasks.eltaskDesciptionInput.value = "";
         }
     },
+
+
+    saveTasks: function() {
+        let text = Tasks.elTextInput.value;
+        let TaskPriority = Tasks.elTaskPriority.value;
+        let taskDescription = Tasks.eltaskDesciptionInput.value;
+
+        if (text.length < 3 || TaskPriority == "none") {
+            alert("Task name is to short! or didn't set Task Priority");
+        } else if (text.length > 64 || taskDescription.length > 70) {
+            alert("Task name or description is to long!");
+        } else {
+            Tasks.addMoreTask();
+            hideWindows.hideAddTaskWindow();
+        }
+    },
+
 
     deleteSelectedCheckBox: function() {
         var texts = document.getElementsByClassName('checkBoxSelector');
@@ -133,7 +151,8 @@ var hideWindows = {
 }
 
 
-Tasks.elAddButton.onclick = Tasks.resetInput;
+Tasks.elAddButton.onclick = Tasks.addMoreTask;
+Tasks.elsSaveTask.onclick = Tasks.saveTasks;
 Tasks.elDeleteTask.onclick = Tasks.deleteSelectedCheckBox;
 
 hideWindows.elShowAllTaskButton.onclick = hideWindows.hideAddTaskWindow;
