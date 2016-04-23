@@ -43,6 +43,7 @@ var Tasks = {
 
 
     saveTasks: function() {
+
         let text = Tasks.elTextInput.value;
         let TaskPriority = Tasks.elTaskPriority.value;
         let taskDescription = Tasks.eltaskDesciptionInput.value;
@@ -91,6 +92,9 @@ var Tasks = {
                 hideCopleted[i].style["visibility"] = 'hidden';
                 aColl[i].style["text-decoration"] = noLine;
             }
+        }
+        if (localStorage) { // Browser supports it
+            localStorage.base = document.getElementById("responce").innerHTML;
         }
     },
 };
@@ -150,10 +154,48 @@ var hideWindows = {
     },
 }
 
+var deleteTaskStorage = function() {
+    Tasks.deleteSelectedCheckBox();
+    if (localStorage) { // Browser supports it
+        localStorage.base = document.getElementById("responce").innerHTML;
+    }
+}
 
-Tasks.elAddButton.onclick = Tasks.addMoreTask;
-Tasks.elsSaveTask.onclick = Tasks.saveTasks;
-Tasks.elDeleteTask.onclick = Tasks.deleteSelectedCheckBox;
+var saveTaskStorage = function() {
+    Tasks.saveTasks();
+    if (localStorage) { // Browser supports it
+        localStorage.base = document.getElementById("responce").innerHTML;
+    }
+}
 
-hideWindows.elShowAllTaskButton.onclick = hideWindows.hideAddTaskWindow;
-hideWindows.elAddNewTaskButton.onclick = hideWindows.hideTaskWindow;
+var addMorTaskStorage = function() {
+    Tasks.addMoreTask();
+    if (localStorage) { // Browser supports it
+        localStorage.base = document.getElementById("responce").innerHTML;
+    }
+}
+
+var hideWindowsStorage = function() {
+    hideWindows.hideAddTaskWindow();
+    if (localStorage) { // Browser supports it
+        localStorage.base = document.getElementById("responce").innerHTML;
+    }
+}
+
+var hideTaskWindowStorage = function() {
+    hideWindows.hideTaskWindow();
+    if (localStorage) { // Browser supports it
+        localStorage.base = document.getElementById("responce").innerHTML;
+    }
+}
+
+Tasks.elAddButton.onclick = addMorTaskStorage;
+Tasks.elsSaveTask.onclick = saveTaskStorage;
+Tasks.elDeleteTask.onclick = deleteTaskStorage;
+
+
+hideWindows.elShowAllTaskButton.onclick = hideWindowsStorage;
+hideWindows.elAddNewTaskButton.onclick = hideTaskWindowStorage;
+
+
+document.getElementById("responce").innerHTML = localStorage.base;
