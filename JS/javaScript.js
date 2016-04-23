@@ -12,12 +12,12 @@ var Tasks = {
     elCheckBox: document.getElementsByClassName('userTaskText'),
 
     resetInput: function() {
-        var priority;
-        var text = Tasks.elTextInput.value;
-        var TaskPriority = Tasks.elTaskPriority.value;
-        var taskDescription = Tasks.eltaskDesciptionInput.value;
-        var completed = 'COMPLETED';
-        var active = 'ACTIVE';
+        let priority;
+        let text = Tasks.elTextInput.value;
+        let TaskPriority = Tasks.elTaskPriority.value;
+        let taskDescription = Tasks.eltaskDesciptionInput.value;
+        let completed = 'COMPLETED';
+        let active = 'ACTIVE';
 
         if (TaskPriority == 3) {
             priority = '<button type="button" class="btn-group-sm btn-success priorityButtons ">LOW</button>';
@@ -33,7 +33,7 @@ var Tasks = {
             alert("Task name or description is to long!");
         } else {
             //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><span><p class="userTaskText">' + text  + '<span class="statusColor">' + active + ' </span>' + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
+            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><span><p class="userTaskText">' + text + '<span class="statusColor">' + active + ' </span>' + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
             Tasks.elTextInput.value = "";
             Tasks.elTaskPriority.value = "none";
             Tasks.eltaskDesciptionInput.value = "";
@@ -54,24 +54,23 @@ var Tasks = {
     },
 
     handleClick: function() {
-        var aColl = document.getElementsByClassName('userTaskText');
-        var lineThrough = 'line-through';
-        var noLine = 'none';
-        var texts = document.getElementsByClassName('checkBoxSelector');
-        var hideActive = document.getElementsByClassName('statusColor');
-        var hideCopleted = document.getElementsByClassName('statusHide');
+        let aColl = document.getElementsByClassName('userTaskText');
+        let lineThrough = 'line-through';
+        let noLine = 'none';
+        let texts = document.getElementsByClassName('checkBoxSelector');
+        let hideActive = document.getElementsByClassName('statusColor');
+        let hideCopleted = document.getElementsByClassName('statusHide');
 
-        for (var i = 0; i < Tasks.elboxes.length; i++) {
+        for (let i = 0; i < Tasks.elboxes.length; i++) {
             box = Tasks.elboxes[i];
             txt = texts[i];
             if (box.checked) {
-                //  alert(Task.active[i]);
                 hideActive[i].style["visibility"] = 'hidden';
                 hideCopleted[i].style["visibility"] = 'visible';
                 aColl[i].parentNode.style["text-decoration"] = lineThrough;
             } else {
-              hideActive[i].style["visibility"] = 'visible';
-              hideCopleted[i].style["visibility"] = 'hidden';
+                hideActive[i].style["visibility"] = 'visible';
+                hideCopleted[i].style["visibility"] = 'hidden';
                 aColl[i].parentNode.style["text-decoration"] = noLine;
             }
         }
@@ -85,22 +84,50 @@ var hideWindows = {
     elAddNewTaskButton: document.getElementById("btnAddNewTaskSize"),
 
     hideAddTaskWindow: function() {
-        var addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
-        var taskWindow = document.getElementsByClassName('WindowBackground');
+        let addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
+        let taskWindow = document.getElementsByClassName('WindowBackground');
+        let hideActive = document.getElementsByClassName('statusColor');
+        let hideCopleted = document.getElementsByClassName('statusHide');
+        let aColl = document.getElementsByClassName('userTaskText');
 
-        for (var i = 0; i < addTaskCss.length; i++) {
+        for (let i = 0; i < addTaskCss.length; i++) {
             addTaskCss[i].style["visibility"] = 'hidden';
             taskWindow[i].style["visibility"] = 'visible';
         }
+
+        for (let j = 0; j < Tasks.elboxes.length; j++) {
+            box = Tasks.elboxes[j];
+            if (box.checked) {
+                hideActive[j].style["visibility"] = 'hidden';
+                hideCopleted[j].style["visibility"] = 'visible';
+            } else {
+                hideActive[j].style["visibility"] = 'visible';
+                hideCopleted[j].style["visibility"] = 'hidden';
+            }
+        }
+
     },
     hideTaskWindow: function() {
-        var addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
-        var taskWindow = document.getElementsByClassName('WindowBackground');
-        var hidden = 'hidden';
-        var visible = 'visible';
-        for (var i = 0; i < addTaskCss.length; i++) {
+        let addTaskCss = document.getElementsByClassName('addTaskWindowBackground');
+        let taskWindow = document.getElementsByClassName('WindowBackground');
+        let hideActive = document.getElementsByClassName('statusColor');
+        let hideCopleted = document.getElementsByClassName('statusHide');
+        let aColl = document.getElementsByClassName('userTaskText');
+
+        for (let i = 0; i < addTaskCss.length; i++) {
             taskWindow[i].style["visibility"] = 'hidden';
             addTaskCss[i].style["visibility"] = 'visible';
+        }
+
+        for (let j = 0; j < Tasks.elboxes.length; j++) {
+            box = Tasks.elboxes[j];
+            if (box.checked) {
+                hideActive[j].style["visibility"] = 'hidden';
+                hideCopleted[j].style["visibility"] = 'hidden';
+            } else {
+                hideActive[j].style["visibility"] = 'hidden';
+                hideCopleted[j].style["visibility"] = 'hidden';
+            }
         }
     },
 }
