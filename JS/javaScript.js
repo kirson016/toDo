@@ -1,4 +1,4 @@
-var Tasks = {
+var Task = {
     elAddButton: document.getElementById('btn-AddNewTask'),
     elsSaveTask: document.getElementById('btn-saveTask'),
     elDeleteTask: document.getElementById('btnClearTaskSize'),
@@ -14,9 +14,9 @@ var Tasks = {
 
     addMoreTask: function() {
         let priority;
-        let text = Tasks.elTextInput.value;
-        let TaskPriority = Tasks.elTaskPriority.value;
-        let taskDescription = Tasks.eltaskDesciptionInput.value;
+        let text = Task.elTextInput.value;
+        let TaskPriority = Task.elTaskPriority.value;
+        let taskDescription = Task.eltaskDesciptionInput.value;
         let completed = 'COMPLETED';
         let active = 'ACTIVE';
 
@@ -33,28 +33,28 @@ var Tasks = {
         } else if (text.length > 64 || taskDescription.length > 70) {
             alert("Task name or description is to long!");
         } else {
-            //Tasks.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
-            Tasks.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText"><span class="lineThrough">' + text + '</span><span class="statusColor">' + active + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Tasks.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
-            Tasks.elTextInput.value = "";
-            Tasks.elTaskPriority.value = "none";
-            Tasks.eltaskDesciptionInput.value = "";
+            //Task.elResponceSpan.innerHTML += '<div class="checkboxid"><p class="userTaskText"> ' + text + '</p><input type="checkbox" id="checkBox" class="checked" aria-label="..."> ' + priority;
+            Task.elResponceSpan.innerHTML += '<div class="checkBoxSelector"><p class="userTaskText"><span class="lineThrough">' + text + '</span><span class="statusColor">' + active + '<span class="statusHide">' + completed + '</span></p><span class="checkBOX"><label><input type="checkbox"  class="checked"  onclick=Task.handleClick() aria-label="..."></label></span> ' + priority + '</div>';
+            Task.elTextInput.value = "";
+            Task.elTaskPriority.value = "none";
+            Task.eltaskDesciptionInput.value = "";
         }
     },
 
 
     saveTasks: function() {
 
-        let text = Tasks.elTextInput.value;
-        let TaskPriority = Tasks.elTaskPriority.value;
-        let taskDescription = Tasks.eltaskDesciptionInput.value;
+        let text = Task.elTextInput.value;
+        let TaskPriority = Task.elTaskPriority.value;
+        let taskDescription = Task.eltaskDesciptionInput.value;
 
         if (text.length < 3 || TaskPriority == "none") {
             alert("Task name is to short! or didn't set Task Priority");
         } else if (text.length > 64 || taskDescription.length > 70) {
             alert("Task name or description is to long!");
         } else {
-            Tasks.addMoreTask();
-            hideWindows.hideAddTaskWindow();
+            Task.addMoreTask();
+            webWindowControl.hideAddTaskWindow();
         }
     },
 
@@ -62,8 +62,8 @@ var Tasks = {
     deleteSelectedCheckBox: function() {
         var texts = document.getElementsByClassName('checkBoxSelector');
 
-        for (var i = 0; i < Tasks.elboxes.length; i++) {
-            box = Tasks.elboxes[i];
+        for (var i = 0; i < Task.elboxes.length; i++) {
+            box = Task.elboxes[i];
             txt = texts[i];
             if (box.checked) {
                 box.parentNode.removeChild(box);
@@ -80,8 +80,8 @@ var Tasks = {
         let hideActive = document.getElementsByClassName('statusColor');
         let hideCopleted = document.getElementsByClassName('statusHide');
 
-        for (let i = 0; i < Tasks.elboxes.length; i++) {
-            box = Tasks.elboxes[i];
+        for (let i = 0; i < Task.elboxes.length; i++) {
+            box = Task.elboxes[i];
             txt = texts[i];
             if (box.checked) {
                 hideActive[i].style["visibility"] = 'hidden';
@@ -93,15 +93,14 @@ var Tasks = {
                 aColl[i].style["text-decoration"] = noLine;
             }
         }
-        if (localStorage) { // Browser supports it
+        if (typeof(Storage) !== "undefined") { // Browser supports it
             localStorage.base = document.getElementById("responce").innerHTML;
         }
     },
 };
 
 
-
-var hideWindows = {
+var webWindowControl = {
     elShowAllTaskButton: document.getElementById("btnShowAllTasks"),
     elAddNewTaskButton: document.getElementById("btnAddNewTaskSize"),
 
@@ -117,8 +116,8 @@ var hideWindows = {
             taskWindow[i].style["visibility"] = 'visible';
         }
 
-        for (let j = 0; j < Tasks.elboxes.length; j++) {
-            box = Tasks.elboxes[j];
+        for (let j = 0; j < Task.elboxes.length; j++) {
+            box = Task.elboxes[j];
             if (box.checked) {
                 hideActive[j].style["visibility"] = 'hidden';
                 hideCopleted[j].style["visibility"] = 'visible';
@@ -141,8 +140,8 @@ var hideWindows = {
             addTaskCss[i].style["visibility"] = 'visible';
         }
 
-        for (let j = 0; j < Tasks.elboxes.length; j++) {
-            box = Tasks.elboxes[j];
+        for (let j = 0; j < Task.elboxes.length; j++) {
+            box = Task.elboxes[j];
             if (box.checked) {
                 hideActive[j].style["visibility"] = 'hidden';
                 hideCopleted[j].style["visibility"] = 'hidden';
@@ -155,47 +154,51 @@ var hideWindows = {
 }
 
 var deleteTaskStorage = function() {
-    Tasks.deleteSelectedCheckBox();
-    if (localStorage) { // Browser supports it
+    Task.deleteSelectedCheckBox();
+    if (typeof(Storage) !== "undefined") { // Browser supports it
         localStorage.base = document.getElementById("responce").innerHTML;
     }
 }
 
 var saveTaskStorage = function() {
-    Tasks.saveTasks();
-    if (localStorage) { // Browser supports it
+    Task.saveTasks();
+    if (typeof(Storage) !== "undefined") { // Browser supports it
         localStorage.base = document.getElementById("responce").innerHTML;
     }
 }
 
 var addMorTaskStorage = function() {
-    Tasks.addMoreTask();
-    if (localStorage) { // Browser supports it
+    Task.addMoreTask();
+    if (typeof(Storage) !== "undefined") { // Browser supports it
         localStorage.base = document.getElementById("responce").innerHTML;
     }
 }
 
 var hideWindowsStorage = function() {
-    hideWindows.hideAddTaskWindow();
-    if (localStorage) { // Browser supports it
+    webWindowControl.hideAddTaskWindow();
+    if (typeof(Storage) !== "undefined") { // Browser supports it
         localStorage.base = document.getElementById("responce").innerHTML;
     }
 }
 
 var hideTaskWindowStorage = function() {
-    hideWindows.hideTaskWindow();
-    if (localStorage) { // Browser supports it
+    webWindowControl.hideTaskWindow();
+    if (typeof(Storage) !== "undefined") { // Browser supports it
         localStorage.base = document.getElementById("responce").innerHTML;
     }
 }
 
-Tasks.elAddButton.onclick = addMorTaskStorage;
-Tasks.elsSaveTask.onclick = saveTaskStorage;
-Tasks.elDeleteTask.onclick = deleteTaskStorage;
+Task.elAddButton.onclick = addMorTaskStorage;
+Task.elsSaveTask.onclick = saveTaskStorage;
+Task.elDeleteTask.onclick = deleteTaskStorage;
 
 
-hideWindows.elShowAllTaskButton.onclick = hideWindowsStorage;
-hideWindows.elAddNewTaskButton.onclick = hideTaskWindowStorage;
+webWindowControl.elShowAllTaskButton.onclick = hideWindowsStorage;
+webWindowControl.elAddNewTaskButton.onclick = hideTaskWindowStorage;
 
-
-document.getElementById("responce").innerHTML = localStorage.base;
+ var startWebLoad = function () {
+    if (typeof(Storage) !== "undefined") { // Browser supports it
+        document.getElementById("responce").innerHTML = localStorage.base;
+    }
+}
+ startWebLoad();
